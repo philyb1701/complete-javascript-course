@@ -71,5 +71,42 @@ console.log(5 + 6 + '4' + 9 - 4 - 2);//*11)4(3)
 if (language === "English" && population < 50 && isIsland){
     console.log(`You should live in ${country}`)
 }   else {console.log(`${country} does not meet your criteria.`)
-
 }
+
+//Eleventh Task - Switch Statement
+switch (language) {
+    case "mandarin": // language === "mandarin" - strict equality
+        console.log("MOST number of native speakers");
+        break;
+    case "spanish":
+        console.log("SECOND most number of native speakers.");
+        break;
+    case "english":
+        console.log("THIRD most number of native speakers");
+        break;
+    case "hindi":
+        console.log("FOURTH most number of native speakers.")
+        break;
+    case "arabic":
+        console.log("FIFTH most number of native speakers.")
+        break;
+    default:
+        console.log("A great language too!")
+}
+
+//Task 12 - Conditional Ternary Operator
+
+// if (population > 33) {
+//     console.log(`${country}'s population is above average.`)
+// } else {
+//     console.log(`${country}'s population is below average.`)
+// } 
+
+//Below is the same as above, using ternary operator
+
+population > 33 ? console.log(`${country}'s population is above average.`) : console.log(`${country}'s population is below average.`);
+
+//Below is the same, more efficident and can use tenary operator within template literals!
+
+console.log(`${country}'s population ${population > 33 ? "above" : "below"} average`,
+);
