@@ -16,7 +16,7 @@ console.log(dolphinsScore, koalasScore)
 
 if (dolphinsScore > koalasScore && dolphinsScore >= minimumScore){
     console.log("Dolphins win!")
-} else if (koalasScore > dolphinsScore && dolphinsScore >= minimumScore){
+} else if (koalasScore > dolphinsScore && koalasScore >= minimumScore){
     console.log("Koalas win!")
 } else if (koalasScore === dolphinsScore && dolphinsScore >= minimumScore){
     console.log("It's a draw!")
