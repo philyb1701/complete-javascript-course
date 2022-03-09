@@ -77,18 +77,113 @@ console.log(describePopulation("Russia", 120));
 
 //Part 5 - Intro to Arrays
 
+const countryPopulations = [365, 1445, 120, 65];
+console.log(countryPopulations.length === 4);//Querying if the array has 4 elements.
+console.log(countryPopulations.length === 3);//Same as above, but 3. Should be false.
 
-const calcAverage = (score1, score2, score3) => (score1 + score2 + score3 / 3);
-const scoreKoalas = calcAverage(65,54,49)
-const scoreDolphins = calcAverage(44,23,71)
+// Calls function above (percentageofworld1)
+const percentages = 
+[percentageOfWorld1(countryPopulations[0]), 
+percentageOfWorld1(countryPopulations[1]), 
+percentageOfWorld1(countryPopulations[2]), 
+percentageOfWorld1(countryPopulations[countryPopulations.length - 1])]; 
+console.log(percentages);
+//.length - 1 etc is good practice for the last in array.
 
-function checkWinner (averageKoalas, averageDolphins){
-    if (averageDolphins >= averageKoalas * 2){
-        return `Dolphins win! ${scoreDolphins} to ${scoreKoalas}`
-    } else if (averageKoalas >= averageDolphins * 2){
-        return `Koalas win! ${scoreKoalas} to ${scoreDolphins}`
-    } 
-    else {return `No winner! ${scoreKoalas} and ${scoreDolphins}`}
+// Part 6 - Methods - (Basic Array Operations)
+const neighbours = ["Belgium", "France", "Poland"]
+console.log(neighbours);
+neighbours.push ("Utopia");
+console.log(neighbours);
+neighbours.pop();
+console.log(neighbours);
+//Use ! changes it to DOES NOT include.
+
+if (!neighbours.includes("Germany")) {
+    console.log("Probably not a central European country...")
 }
+console.log(neighbours.indexOf("Poland"));
+neighbours[neighbours.indexOf("Poland")] = "Polish Federation";//Mutates the array element
+console.log(neighbours)
 
-console.log(checkWinner(scoreKoalas, scoreDolphins))
+// Part 7 - Intro to Objects
+
+// const myCountry = {
+//     country: "England",
+//     capital: "London",
+//     language: "English",
+//     population: 65,
+//     neighbours: ["Scotland", "Wales"]
+// }
+// console.log(myCountry);
+// console.log(myCountry.country);//Dot notation, we have to put a value.
+// console.log(myCountry['country']);//Bracket notation, we can put anything.
+
+// Part 8 - Dot vs Bracket Notification
+
+//Lecture Challenge
+// const phil = {
+//     firstName: "Phil",
+//     friends: ["George", "Chris", "Beril"],
+//     job: "Teacher",
+//     lastName: "Burkhill",
+//     location: "Liverpool",
+//     twitter: "@philcodebreaker",
+// }
+// console.log(`${phil.firstName} has ${phil.friends.length} friends, and his best friend is ${phil.friends[0]}!`)
+
+//Using object and values from PART 7
+
+// console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.population}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}!`)
+
+// Part 9 - Object Methods. 
+//A function attached to an object is known as a method. So object methods.
+//.this key, why would we use it? DRY (DONT REPEAT YOURSELF)
+
+//Lecture Challenge. Write method for returning info.
+
+// const phil = {
+//     firstName: "Phil",
+//     lastName: "Burkhill",
+//     birthYear: 1986,
+//     friends:["George", "Chris", "Beril"],
+//     job: "English Teacher",
+//     location: "Liverpool",
+//     twitter: "@philycodebrreaker",
+//     passport: true,
+//     //Methods
+//     calcAge: function(){
+//         this.age = 2021 - this.birthYear
+//         return this.age;
+//     },
+//     //Second method uses the calcAge function too!
+//     personInfo: function (){
+//         return `${this.firstName} is ${this.calcAge()} years old. He works as a ${this.job}, he has ${this.friends.length} friends and his twitter handle is ${this.twitter}! He has ${this.passport ? "a" : "no"} passport, so ${this.passport ? "can" : "can not"} travel.`//Ternary operator!
+//     }
+//     //Order doesn't really matter because of hoisting.
+// }
+// console.log (phil.personInfo());//Phil is the object calling the method (personInfo)
+
+//Use the object from Part 7
+
+const myCountry = {
+    country: "England",
+    capital: "London",
+    language: "English",
+    population: 65,
+    neighbours: ["Scotland", "Wales"],
+    describeMyCountry: function(){
+        return `${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}!`
+    },
+    checkIsland: function(){
+        return this.neighbours ? this.neighbours.length === 0 : this.neighbours.length > 0}
+        //more simple way
+        //return this.neighbours.length === 0 ? true : false;
+    } //if this.neighbours legnth is equal to 0, true else neighbours length greater than 0 false.
+
+console.log (myCountry.describeMyCountry())
+console.log (myCountry.checkIsland())
+
+
+
+

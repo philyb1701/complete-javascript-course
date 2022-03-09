@@ -17,4 +17,5 @@ function checkWinner (averageKoalas, averageDolphins){
         return `No winner! ${scoreKoalas} and ${scoreDolphins}`
     }
 }
+
 console.log(checkWinner(scoreKoalas, scoreDolphins))
