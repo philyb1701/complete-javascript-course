@@ -184,6 +184,37 @@ const myCountry = {
 console.log (myCountry.describeMyCountry())
 console.log (myCountry.checkIsland())
 
+//Part 10 - For Loop - for loop repeats until we tell it to stop, usually with a counter.
+
+//(Executed before the execution of the code, condition for executing the code, executed after the code block is executed,.)
+//i = counter variable. good practice to use i especially in variables.
+for (let i = 1; i <= 50; i++){ 
+    console.log (`Voter number ${i} is currently voting.`)
+}
+
+//Part 11 - Looping Arrrays, Breaking and Continuing
+
+// const years = [1986, 2001, 2005, 2019];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++){
+//     ages.push (2021 - years[i]);
+// }
+// console.log(ages);
+
+//Using countrypopulations array from above
+//const countryPopulations = [365, 1445, 120, 65];
+const percentages2 = [];
+for (let i = 0; i < countryPopulations.length; i++){
+    percentages2.push (percentageOfWorld1(countryPopulations[i]));
+}
+console.log(percentages2)
+//Don't forget the i. Need more practice?
+
+//Part 12 -
+const listOfNeighbours = [["Canada", "Mexico"], ["Spain"], ["Norway", "Sweden", "Russia"]];
+console.log(``)
+
 
 
 
