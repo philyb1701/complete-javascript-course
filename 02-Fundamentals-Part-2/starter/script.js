@@ -192,7 +192,7 @@ for (let i = 1; i <= 50; i++){
     console.log (`Voter number ${i} is currently voting.`)
 }
 
-//Part 11 - Looping Arrrays, Breaking and Continuing
+//Part 11 - Looping Arrays, Breaking and Continuing
 
 // const years = [1986, 2001, 2005, 2019];
 // const ages = [];
@@ -211,10 +211,91 @@ for (let i = 0; i < countryPopulations.length; i++){
 console.log(percentages2)
 //Don't forget the i. Need more practice?
 
-//Part 12 -
-const listOfNeighbours = [["Canada", "Mexico"], ["Spain"], ["Norway", "Sweden", "Russia"]];
-console.log(``)
+//Part 12 - Looping Backwards and Loop within a Loop
+
+//From the lecture
+
+
+//Backwards loop.
+const phil = [
+    "Phil",
+    "Burkhill",
+    2021 - 1986,
+    "teacher",
+    ["George", "Chris", "Beril"]
+];
+
+    for (let i = phil.length -1; i >= 0; i--){
+        console.log(i, phil[i]);
+    } //This is a backwards loop. Counts and prints backwards.
+
+//LOOP WITHIN A LOOP - NESTED LOOPS
+//(Executed before the execution of the code, condition for executing the code, executed after the code block is executed,.)
+for (let exercise = 1; exercise <= 3; exercise++){
+    console.log(`------- STARTING EXERCISE ${exercise}`);
+
+    for (let rep = 1; rep < 6; rep++){
+    console.log(`LIFTING WEIGHTS, REP #${rep}`)
+    }
+}
 
 
 
+const listOfNeighbours = [
+    ["Canada", "Mexico"], 
+    ["Spain"], 
+    ["Norway", "Sweden", "Russia"]
+];
+
+for (let i = 0; i < listOfNeighbours.length; i++){
+    for (let y = 0; y < listOfNeighbours[i].length; y++){
+        console.log(`Neighbour: ${listOfNeighbours[i][y]}`);
+    }  
+}
+
+//Need more practice.
+
+//Part 13 - 
+
+for (let rep = 1; rep <= 10; rep++) {
+    console.log(`Lifting weights reptition ${rep}`)
+}
+
+//Conversion of above into while loop
+//loop runs while rep is less than or equal to 10
+let rep = 1;
+while (rep <= 10) {
+    console.log(`WHILE LOOP: Lifting weighs rep ${rep}`)
+    rep++;
+}
+//WHILE LOOP more versatile, can be used in a larger variety of situations.
+//Math.random creates number 0-1. + 1 to avoid a 0. 1-6 is dice.
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+//While loop rolls until we get a six
+//Dice is useful
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}!`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) {console.log(`Loop is about to end with a ${dice}....`);
+    }
+}
+//While dice is NOT 6, then show one of the above. When it hits 6, it stops logging the results.
+
+//RECREATE THIS
+//const percentages2 = [];
+// for (let i = 0; i < countryPopulations.length; i++){
+//     percentages2.push (percentageOfWorld1(countryPopulations[i]));
+// }
+//with a while loop
+
+const percentages3 = []; 
+let i = 0;
+    while (i < countryPopulations.length) {
+        const perc = percentageOfWorld1(countryPopulations[i]);
+        percentages3.push(perc);
+        i++
+    }
+    console.log(percentages3);
 
