@@ -37,8 +37,19 @@ for (let i = 0; i < bills.length; i++){
     tips1.push(tip1)
     totals1.push(tip1 + bills1[i])
 }
+
 console.log(tips1)
 console.log(totals1)
 //Why is tip a const? Well the original si not mutating, just a new one is created.
 
-
+function calcAverage(arr){
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+      // sum = sum + arr[i];
+      sum += arr[i];
+    }
+    return sum / arr.length;
+  }
+console.log(calcAverage([2, 3, 7]));
+console.log(calcAverage(totals));
+console.log(calcAverage(tips));
